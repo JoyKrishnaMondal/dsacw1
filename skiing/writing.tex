@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
+\begin{document}
+
+\title{Coursework 1 (part one): Downhill skiing}
+\author{Liban Abdulkadir}
+
+\maketitle
+
+\section*{Question 1}
+\begin{center}
+    \begin{tabular}{| c | c | c | c | }
+    \hline
+    1 & 9 & 9 & 9 \\ \hline
+    2 & 1 & 9 & 9 \\ \hline
+    2 & 9 & 1 & 9 \\ \hline
+    1 & 9 & 9 & 9 \\ \hline
+    \end{tabular}
+\end{center}
+Because the algorithm does not look ahead, it has the potential of getting “trapped” by selecting a path where each arc has a very low cost at the beginning but increases significantly later on.
+\section*{Question 2}
+\begin{equation}D(x,y) = min(\{D(x-1,y+1),D(x,y+1),D(x+1,y+1)\}) + C(x,y)\end{equation}
+\begin{equation}D(x,n) = 0\label{eq:terminating}\end{equation}
+\begin{equation}D(x,y) = \infty\;\text{if}\: x \notin [1,n]\end{equation}
+
+\emph{C(x,y)} returns the danger of moving a single step over \emph{(x,y)}.
+This recurrence works by calculating the danger of 3 possible paths 
+(\begin{math}D(x-1,y+1), D(x,y+1), D(x+1,y+1)\end{math}) from the current position 
+\begin{math}(x,y)\end{math} to the bottom.
+
+The least dangerous path is selected and added to the danger of using the current position in the path.
+This recurrence relation terminates when \begin{math}y+1 = n\end{math} due to (\ref{eq:terminating}).
+
+
+\end{document}
