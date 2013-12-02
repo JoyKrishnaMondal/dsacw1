@@ -1,36 +1,94 @@
-*.py[cod]
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
 
-# C extensions
-*.so
+## Intermediate documents:
+*.dvi
+# these rules might exclude image files for figures etc.
+# *.ps
+# *.eps
+# *.pdf
 
-# Packages
-*.egg
-*.egg-info
-dist
+## Bibliography auxiliary files (bibtex/biblatex/biber):
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+## Build tool auxiliary files:
+*.fdb_latexmk
+*.synctex.gz
+*.pdfsync
+
+## Auxiliary and intermediate files from other packages:
+
+# algorithms
+*.alg
+*.loa
+
+# amsthm
+*.thm
+
+# beamer
+*.nav
+*.snm
+*.vrb
+
+# glossaries
+*.acn
+*.acr
+*.glg
+*.glo
+*.gls
+
+# hyperref
+*.brf
+
+# listings
+*.lol
+
+# makeidx
+*.idx
+*.ilg
+*.ind
+*.ist
+
+# minitoc
+*.maf
+*.mtc
+*.mtc0
+
+# minted
+*.pyg
+
+# nomencl
+*.nlo
+
+# todonotes
+*.tdo
+
+# xindy
+*.xdy
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
 build
-eggs
-parts
-bin
-var
-sdist
-develop-eggs
-.installed.cfg
-lib
-lib64
-__pycache__
 
-# Installer logs
-pip-log.txt
-
-# Unit test / coverage reports
-.coverage
-.tox
-nosetests.xml
-
-# Translations
-*.mo
-
-# Mr Developer
-.mr.developer.cfg
-.project
-.pydevproject
+node_modules
+*.swp
