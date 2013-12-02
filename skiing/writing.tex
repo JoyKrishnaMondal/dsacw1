@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{graphicx}
 \usepackage{mathtools}
+\usepackage{listings}
 
 \begin{document}
 
@@ -22,7 +23,7 @@
 Because the algorithm does not look ahead, it has the potential of getting “trapped” by selecting a path where each arc has a very low cost at the beginning but increases significantly later on.
 \section*{Question 2}
 \begin{equation}D(x,y) = min(\{D(x-1,y+1),D(x,y+1),D(x+1,y+1)\}) + C(x,y)\end{equation}
-\begin{equation}D(x,n) = 0\label{eq:terminating}\end{equation}
+\begin{equation}D(x,n) = C(x,y)\label{eq:terminating}\end{equation}
 \begin{equation}D(x,y) = \infty\;\text{if}\: x \notin [1,n]\end{equation}
 
 \emph{C(x,y)} returns the danger of moving a single step over \emph{(x,y)}.
@@ -32,6 +33,11 @@ This recurrence works by calculating the danger of 3 possible paths
 
 The least dangerous path is selected and added to the danger of using the current position in the path.
 This recurrence relation terminates when \begin{math}y+1 = n\end{math} due to (\ref{eq:terminating}).
+
+\section*{Question 3}
+\begin{lstlisting}
+derp
+\end{lstlisting}
 
 
 \end{document}
