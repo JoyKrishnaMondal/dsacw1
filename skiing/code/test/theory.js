@@ -11,4 +11,12 @@ describe("Theory",function(){
             assert.equal(5,theory.naive(S1)(1,1));
         });
     });
+    describe("dynamic recurrence relation",function(){
+        it("should be D(1,3)=3",function(){
+            assert.equal(3,theory.dynamic(S1)(1,3));
+        });
+        it("should be D(1,1)=5",function(){
+            assert.equal(5,theory.dynamic(S1)(1,1));
+        });
+    });
 });
