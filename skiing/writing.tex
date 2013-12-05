@@ -2,6 +2,7 @@
 \usepackage{graphicx}
 \usepackage{mathtools}
 \usepackage{listings}
+\usepackage{algorithm2e}
 
 \begin{document}
 
@@ -35,9 +36,37 @@ The least dangerous path is selected and added to the danger of using the curren
 This recurrence relation terminates when \begin{math}y+1 = n\end{math} due to (\ref{eq:terminating}).
 
 \section*{Question 3}
-\begin{lstlisting}
-derp
-\end{lstlisting}
+\begin{algorithm}[H]\SetAlgoLined\DontPrintSemicolon
+    \SetKwFunction{dynamicDFun}{D}
+    \SetKwFunction{memoDFun}{memoD}
+    \SetKwProg{dynamicD}{Function}{}{end}
+    \SetKwProg{memoD}{Function}{}{end}
+    \SetKw{integer}{integer}
+    \SetKw{or}{or}
+    \SetKw{new}{new}
+    \SetKw{return}{return}
+    \SetKw{undefined}{undefined}
+    
+    \dynamicD{\dynamicDFun{x,y}}{
+        $ dangers \gets $ \new{} \integer{} [n][n]\;
+        \memoD{\memoDFun{x,y}}{
+            \uIf{$ x < 1 $ \or $ x > n$}{
+                \return $ \infty $ 
+            }\uElseIf
+            {$ y = n $}{
+                \return $ S[x][n] $ 
+            }\uElseIf{$ dangers[x][y] \neq \: $\undefined}{
+                \return $ dangers[x][y] $
+            }\Else{
+                $ dangers[x][y] \gets min(\{D(x-1,y+1), D(x,y+1),$\;
+                $ D(x+1,y+1)\}) + S[x][y] $\;
+                \return $ dangers[x][y] $ 
+            }
+        }{}
+        \return \memoDFun{1,1}
+    }{}
+    \caption{Recursive dynamic programming algorithm to determine the danger of the least dangerous path}
+\end{algorithm}
 
 
 \end{document}
